@@ -9,9 +9,7 @@ public class lancaPinguim : MonoBehaviour
 {
     private Vector3 mousePressDownPos;
     private Vector3 mouseReleasePos;
-
     private Rigidbody rb;
-
     private bool isShoot, CanShoot;
     public bool pode;
     [SerializeField]private float forceMultiplier;
@@ -37,11 +35,9 @@ public class lancaPinguim : MonoBehaviour
             if(transform.position.z < 0 &&forceInit.y >0){
                 CanShoot = true;
                 DrawTrajectory.Instance.UpdateLine(forceV, rb, transform.position);
-                Debug.Log("ue");
             }else if(transform.position.z > 0 &&forceInit.y <0){
                 CanShoot = true;
                 DrawTrajectory.Instance.UpdateLine(forceV, rb, transform.position);
-                Debug.Log("vai?");
             }else{
                 DrawTrajectory.Instance.HideLine();
                 CanShoot = false;
@@ -69,6 +65,6 @@ public class lancaPinguim : MonoBehaviour
         rb.useGravity = true;
         gameController.GetComponent<GameController>().pinguimLancado();
     }
-    
+
 
 }

@@ -29,7 +29,7 @@ public class DrawTrajectory : MonoBehaviour
 
     public void UpdateLine(Vector3 force, Rigidbody rb, Vector3 StartingPoint){
         Vector3 velocity = (force/rb.mass)* Time.fixedDeltaTime;
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
         float fligthDuration = (2*velocity.y)/Physics.gravity.y;
         float stepTime = fligthDuration/_lineSegmentCount;
 
@@ -56,7 +56,7 @@ public class DrawTrajectory : MonoBehaviour
                 break;
             }
 
-            Debug.DrawLine(_linePoints[i-1], NewPointOnLine,Color.magenta, 0f, true);
+            //Debug.DrawLine(_linePoints[i-1], NewPointOnLine,Color.magenta, 0f, true);
 
             _linePoints.Add(NewPointOnLine);
         }
